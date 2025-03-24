@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Species Guide</title>
+    <link rel="stylesheet" href="/css/common.css"/>
+    <link rel="stylesheet" href="/css/species.css"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Species Guide</h1>
+        <p>Explore different species of reptiles and amphibians.</p>
+
+        <input type="text" id="searchBar" placeholder="Search species..." />
+
+        
+        <label for="categoryFilter">Category:</label>
+        <select id="categoryFilter">
+            <option value="all">All</option>
+            <option value="reptile">Reptiles</option>
+            <option value="amphibian">Amphibians</option>
+        </select>
+
+        <div class="species-list">
+            
+        </div>
+
+        <div id="speciesModal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 id="speciesName"></h2>
+                <img id="speciesImage" src="" alt="">
+                <p id="speciesDescription"></p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="/js/common.js"></script>
+    <script src="/js/species.js"></script>
+</body>
+</html>
