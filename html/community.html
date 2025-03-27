@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community & Forum</title>
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/community.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1 class = "PageTitle">Community & Forum</h1>
+            <div class="forum-selector">
+                <label for="forumSelect">Select Forum:</label>
+                <select id="forumSelect" onchange="changeForum()">
+                    <option value="general">General Discussion</option>
+                    <option value="care">Care Tips</option>
+                    <option value="market">Marketplace</option>
+                </select>
+            </div>
+            <table id="forumTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Tags</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="/js/community.js"></script>
+    <script src="/js/common.js"></script>
+</body>
+</html>
