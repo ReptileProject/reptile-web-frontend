@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narket Place</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/marketplace.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="sale-title">게시글 제목</h1>
+        <p><strong>작성자:</strong> <span id="sale-author"></span> | <strong>작성일:</strong> <span id="sale-date"></span></p>
+        <div id="sale-content">게시글 내용</div>
+        
+        <div class="buy-buttons">
+            <button id="buy-btn">구매 신청 <span id="buy-count">0</span></button>
+        </div>
+        
+        <h2>댓글</h2>
+        <div id="comments-section">
+            <ul id="comments-list"></ul>
+            <textarea id="comment-input" placeholder="댓글을 입력하세요..."></textarea>
+            <button id="submit-comment">댓글 작성</button>
+        </div>
+    </div>
+    <script src="../js/marketplace.js"></script>
+    <script src="../js/common.js"></script>
+</body>
+</html>
