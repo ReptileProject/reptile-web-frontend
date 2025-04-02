@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     const speciesList = [
-        { name: "Green Tree Frog", image: "/assets/image/frog.png", category: "amphibian", description: "A small, bright green amphibian." },
-        { name: "Leopard Gecko", image: "/assets/image/gecko.png", category: "reptile", description: "A friendly and easy-to-care-for reptile." },
-        { name: "Red-Eyed Tree Frog", image: "/assets/image/red-eyed-frog.png", category: "amphibian", description: "Famous for its vibrant colors and big eyes." },
-        { name: "Ball Python", image: "/assets/image/python.png", category: "reptile", description: "A calm and docile snake." },
-        { name: "Crested Gecko", image: "/assets/image/crested-gecko.png", category: "reptile", description: "A popular beginner-friendly gecko species." },
-        { name: "Axolotl", image: "/assets/image/axolotl.png", category: "amphibian", description: "A fascinating amphibian that remains aquatic throughout life." }
+        { name: "Green Tree Frog", image: "../assets/image/frog.png", category: "amphibian", description: "A small, bright green amphibian." },
+        { name: "Leopard Gecko", image: "../assets/image/frog.png", category: "reptile", description: "A friendly and easy-to-care-for reptile." },
+        { name: "Red-Eyed Tree Frog", image: "../assets/image/frog.png", category: "amphibian", description: "Famous for its vibrant colors and big eyes." },
+        { name: "Ball Python", image: "../assets/image/frog.png", category: "reptile", description: "A calm and docile snake." },
+        { name: "Crested Gecko", image: "../assets/image/frog.png", category: "reptile", description: "A popular beginner-friendly gecko species." },
+        { name: "Axolotl", image: "../assets/image/frog.png", category: "amphibian", description: "A fascinating amphibian that remains aquatic throughout life." }
     ];
 
     const speciesContainer = document.querySelector(".species-list");

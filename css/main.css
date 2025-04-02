@@ -36,7 +36,7 @@ nav a {
 }
 .banner {
     text-align: center;
-    background: url('/assets/image/banner-image.png') no-repeat center;
+    background: url('../assets/image/banner-image.png') no-repeat center;
     background-size: cover;
     color: white;
     padding: 100px 20px;
