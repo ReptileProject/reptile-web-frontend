@@ -24,5 +24,5 @@ export const getChildGroups = (table, groupId) => api.get(`/${table}/children`, 
 export const getGroupDetail = (table, groupId) => api.get(`/${table}/detail/${groupId}`)
 export const getCreatureTaxonomy = (taxonomyId) => api.get(`/creature/${taxonomyId}`)
 export const createGroup = (table, group) => api.post(`/${table}/group`, group)
-export const createTaxonomy = (table, group) => api.post(`/${table}/group`, group)
+export const createTaxonomy = (taxonomyGroup) => api.post(`/taxonomy`, taxonomyGroup)
 export const deleteGroup = (table, groupId) => api.delete(`${table}/group/${groupId}`)
