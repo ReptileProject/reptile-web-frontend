@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import * as api from '@/api/taxonomy'
+import * as api from '@/axios/TaxonomyAxios'
 
 export const useTaxonomyStore = defineStore('taxonomy', {
   state: () => ({
@@ -12,9 +12,9 @@ export const useTaxonomyStore = defineStore('taxonomy', {
     async loadGroupChildren(table, parentId) {
       this.loading = true
       try {
-        const res = await api.getChildGroups(table, parentId ?? 0)
-        const children = res.data
-
+        const res = await api.getChildGroups(table, parentId ?? null)
+        const children = res.data.data
+    
         if (parentId === null) {
           this.groupTree = children
         } else {
@@ -23,12 +23,15 @@ export const useTaxonomyStore = defineStore('taxonomy', {
             parent.children = children
           }
         }
+        return children
       } catch (e) {
         console.error('하위 그룹 로딩 실패:', e)
+        return []
       } finally {
         this.loading = false
       }
-    },
+    }
+    ,
 
     async addTaxonomy(taxonomyGroup) {
         try {
