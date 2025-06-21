@@ -36,36 +36,36 @@ const emitSearch = () => {
 .filters {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
+    gap: 0.75rem;
+    padding: 1rem;
     background: linear-gradient(135deg, #f8fdf8 0%, #e8f5e8 100%);
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(76, 175, 80, 0.08);
-    border: 1px solid rgba(139, 195, 74, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 1px 8px rgba(76, 175, 80, 0.06);
+    border: 1px solid rgba(139, 195, 74, 0.15);
     max-width: 100%;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 1rem;
 }
 
 /* 검색 버튼 스타일 */
 button {
-    padding: 0.75rem 2rem;
+    padding: 0.5rem 1.5rem;
     background: linear-gradient(135deg, #66bb6a, #4caf50);
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
     align-self: center;
-    min-width: 120px;
+    min-width: 100px;
 }
 
 button:hover {
     background: linear-gradient(135deg, #4caf50, #388e3c);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    box-shadow: 0 3px 8px rgba(76, 175, 80, 0.25);
 }
 
 button:active {
@@ -76,24 +76,24 @@ button:active {
 .filters :deep(.search-field) {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.3rem;
     width: 100%;
 }
 
 .filters :deep(label) {
     font-weight: 600;
     color: #2e7d32;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     letter-spacing: 0.02em;
 }
 
 .filters :deep(input),
 .filters :deep(select) {
-    padding: 0.6rem 0.8rem;
-    border: 2px solid #c8e6c9;
-    border-radius: 8px;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid #c8e6c9;
+    border-radius: 6px;
     background: white;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
     outline: none;
 }
@@ -101,7 +101,7 @@ button:active {
 .filters :deep(input:focus),
 .filters :deep(select:focus) {
     border-color: #66bb6a;
-    box-shadow: 0 0 0 2px rgba(102, 187, 106, 0.1);
+    box-shadow: 0 0 0 2px rgba(102, 187, 106, 0.08);
 }
 
 .filters :deep(input::placeholder) {
@@ -112,10 +112,10 @@ button:active {
 .filters :deep(select) {
     cursor: pointer;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2366bb6a' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-    background-position: right 0.6rem center;
+    background-position: right 0.5rem center;
     background-repeat: no-repeat;
-    background-size: 1.2em 1.2em;
-    padding-right: 2rem;
+    background-size: 1em 1em;
+    padding-right: 1.8rem;
     appearance: none;
 }
 
@@ -124,49 +124,28 @@ button:active {
     border-color: #4caf50;
 }
 
-/* TaxonomyFilter 컴팩트 스타일 */
-.filters :deep(.taxonomy-container) {
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid #e8f5e8;
-    box-shadow: 0 1px 4px rgba(76, 175, 80, 0.05);
-}
-
-.filters :deep(.taxonomy-container p) {
-    font-weight: 600;
-    color: #1b5e20;
-    margin: 0 0 0.8rem 0;
-    font-size: 0.9rem;
-    padding-bottom: 0.3rem;
-    border-bottom: 1px solid #e8f5e8;
-}
-
-.filters :deep(.taxonomy-container > div) {
-    margin-bottom: 0.6rem;
-}
-
-.filters :deep(.taxonomy-container > div:last-child) {
-    margin-bottom: 0;
+/* TaxonomyFilter는 가로 배치를 유지하도록 오버라이드 제거 */
+.filters :deep(.taxonomy-filter) {
+    /* 기본 스타일을 그대로 사용 */
 }
 
 /* 반응형 - 작은 화면에서 더 컴팩트 */
 @media (max-width: 768px) {
     .filters {
-        padding: 1rem;
-        gap: 0.8rem;
-        margin-bottom: 1rem;
+        padding: 0.75rem;
+        gap: 0.6rem;
+        margin-bottom: 0.75rem;
     }
 
     .filters :deep(input),
     .filters :deep(select) {
-        padding: 0.5rem 0.7rem;
-        font-size: 0.85rem;
+        padding: 0.45rem 0.6rem;
+        font-size: 0.8rem;
     }
 
     button {
-        padding: 0.6rem 1.5rem;
-        font-size: 0.9rem;
+        padding: 0.45rem 1.2rem;
+        font-size: 0.85rem;
     }
 }
 </style>

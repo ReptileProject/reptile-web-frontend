@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div v-for="(level) in taxonomyLevels" :key="level.value">
+    <div class="taxonomy-filter">
+        <div v-for="(level) in taxonomyLevels" :key="level.value" class="taxonomy-field">
             <label>{{ level.label }}</label>
             <select v-model="selectedIds[level.value]" @change="onGroupChange(level.value, $event.target.value)">
                 <option value="">선택 안함</option>
@@ -8,7 +8,6 @@
                     {{ group.groupName }}
                 </option>
             </select>
-
         </div>
     </div>
 </template>
@@ -16,8 +15,6 @@
 <script setup>
 import { reactive, onMounted } from 'vue'
 import { useTaxonomyStore } from '@/stores/TaxonomyStore'
-
-const emit = defineEmits(['update:selectedGroup'])
 
 const taxonomyLevels = [
     { label: '목(Order)', value: 'ORDER' },
@@ -44,6 +41,7 @@ const groups = reactive({
 })
 
 const store = useTaxonomyStore()
+const emit = defineEmits(['update:selectedGroup'])
 
 onMounted(async () => {
     await store.loadGroupChildren('ORDER', null)
@@ -77,67 +75,55 @@ const onGroupChange = async (level, value) => {
 </script>
 
 <style scoped>
-div {
+.taxonomy-filter {
     background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
+    padding: 1rem;
+    border-radius: 8px;
     border: 1px solid #e8f5e8;
-    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.08);
+    box-shadow: 0 1px 6px rgba(76, 175, 80, 0.06);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
 }
 
-p {
-    font-weight: 700;
-    color: #1b5e20;
-    margin: 0 0 1.5rem 0;
-    font-size: 1.1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #e8f5e8;
-}
-
-div>div {
+.taxonomy-field {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-    padding: 0;
-    background: none;
-    border: none;
-    box-shadow: none;
-}
-
-div>div:last-child {
-    margin-bottom: 0;
+    gap: 0.3rem;
+    flex: 1;
+    min-width: 140px;
 }
 
 label {
     font-weight: 600;
     color: #2e7d32;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     letter-spacing: 0.02em;
+    white-space: nowrap;
 }
 
 select {
-    padding: 0.75rem 1rem;
-    border: 2px solid #c8e6c9;
-    border-radius: 8px;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid #c8e6c9;
+    border-radius: 6px;
     background: #fafafa;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
     outline: none;
     cursor: pointer;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2366bb6a' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-    background-position: right 0.75rem center;
+    background-position: right 0.5rem center;
     background-repeat: no-repeat;
-    background-size: 1.5em 1.5em;
-    padding-right: 2.5rem;
+    background-size: 1em 1em;
+    padding-right: 1.8rem;
     appearance: none;
 }
 
 select:focus {
     border-color: #66bb6a;
     background: white;
-    box-shadow: 0 0 0 3px rgba(102, 187, 106, 0.1);
-    transform: translateY(-1px);
+    box-shadow: 0 0 0 2px rgba(102, 187, 106, 0.08);
 }
 
 select:hover {
@@ -153,8 +139,21 @@ select:disabled {
 }
 
 option {
-    padding: 0.5rem;
+    padding: 0.4rem;
     background: white;
     color: #2e7d32;
+}
+
+/* 반응형 - 작은 화면에서는 세로 배치 */
+@media (max-width: 768px) {
+    .taxonomy-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .taxonomy-field {
+        min-width: auto;
+        flex: none;
+    }
 }
 </style>

@@ -46,24 +46,24 @@ const openDetailModal = (creatureId) => {
 .creature-list-page {
     min-height: 100vh;
     background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e8 50%, #dcedc8 100%);
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
 }
 
 .results {
     max-width: 1200px;
-    margin: 2rem auto 0;
+    margin: 0.75rem auto 0;
     padding: 0 1rem;
 }
 
 .results>div:first-child {
     text-align: center;
-    padding: 3rem 2rem;
-    font-size: 1.2rem;
+    padding: 2rem 1.5rem;
+    font-size: 1.1rem;
     color: #2e7d32;
     font-weight: 600;
     background: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(76, 175, 80, 0.08);
     border: 1px solid rgba(139, 195, 74, 0.2);
 }
 
@@ -71,7 +71,7 @@ const openDetailModal = (creatureId) => {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .creature-card {
@@ -133,12 +133,12 @@ const openDetailModal = (creatureId) => {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 200px;
+    min-height: 150px;
     background: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(76, 175, 80, 0.08);
     border: 1px solid rgba(139, 195, 74, 0.2);
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #2e7d32;
 }
@@ -152,6 +152,7 @@ const openDetailModal = (creatureId) => {
     .creature-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 1rem;
+        margin-top: 1rem;
     }
 
     .creature-card {
@@ -164,6 +165,12 @@ const openDetailModal = (creatureId) => {
 
     .creature-card p {
         font-size: 0.9rem;
+    }
+
+    .results>div:not(.creature-grid) {
+        min-height: 120px;
+        padding: 1rem;
+        font-size: 0.95rem;
     }
 }
 </style>
