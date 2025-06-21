@@ -6,14 +6,14 @@
 
     <FooterComponent />-->
 
-    <TaxonomyFilterComponent />
+    <CreatureListView />
   </div>
 </template>
 
 <script setup>
 import HeaderComponent from '@/components/common/HeaderComponent.vue'
 import FooterComponent from '@/components/common/FooterComponent.vue'
-import TaxonomyFilterComponent from './components/creature/TaxonomyFilterComponent.vue'
+import CreatureListView from './views/creature/CreatureListView.vue'
 import { RouterView } from 'vue-router'
 </script>
 
