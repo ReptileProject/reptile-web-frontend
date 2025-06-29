@@ -3,6 +3,7 @@
         <NameFilter v-model="searchName" />
         <TaxonomyFilter @update:selectedGroup="onGroupSelected" />
         <RegionFilter v-model="selectedRegion" />
+        <IcunFilter v-model="selectedIcunGroup" />
         <button @click="emitSearch">검색</button>
     </div>
 </template>
@@ -12,11 +13,12 @@ import { ref } from 'vue'
 import NameFilter from '@/components/creature/NameFilterComponent.vue'
 import TaxonomyFilter from '@/components/creature/TaxonomyFilterComponent.vue'
 import RegionFilter from '@/components/creature/RegionFilterComponent.vue'
-
+import IcunFilter from '@/components/creature/IcunFilterComponent.vue'
 const emit = defineEmits(['search'])
 
 const searchName = ref('')
 const selectedRegion = ref('')
+const selectedIcunGroup = ref('')
 const selectedTaxonomy = ref(null)
 
 const onGroupSelected = (groupInfo) => {

@@ -1,23 +1,23 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: '/reptile/species'
+  baseURL: '/reptile/species',
 })
 
 api.interceptors.request.use((config) => {
-    console.log('[Species API Request', config)
-    return config
+  console.log('[Species API Request', config)
+  return config
 })
 
 api.interceptors.response.use(
-    (response) => {
-        console.log('[Species API Response', response)
-        return response
-    },
-    (error)=>{
-        console.error('[Species API Error]', error)
-        return Promise.reject(error)
-    }
+  (response) => {
+    console.log('[Species API Response', response)
+    return response
+  },
+  (error) => {
+    console.error('[Species API Error]', error)
+    return Promise.reject(error)
+  },
 )
 
 export const getCreatureDetail = (creatureId) => api.get(`/${creatureId}`)
