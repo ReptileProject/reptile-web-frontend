@@ -5,20 +5,20 @@ const api = axios.create({
 })
 
 api.interceptors.request.use((config) => {
-  console.log('[IcunGroup API Request', config)
+  console.log('[IucnGroup API Request', config)
   return config
 })
 
 api.interceptors.response.use(
   (response) => {
-    console.log('[IcunGroup API Response', response)
+    console.log('[IucnGroup API Response', response)
     return response
   },
   (error) => {
-    console.error('[IcunGroup APi Error', error)
+    console.error('[IucnGroup APi Error', error)
     return Promise.reject(error)
   },
 )
 
-export const getIcunGroupDetail = (icunId) => api.get(`/${icunId}`)
-export const getIcunGroupList = () => api.get()
+export const getIucnGroupDetail = (icunId) => api.get(`/${icunId}`)
+export const getIucnGroupList = () => api.get()

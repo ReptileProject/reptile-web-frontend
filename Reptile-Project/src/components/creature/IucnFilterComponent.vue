@@ -13,15 +13,15 @@
 <script setup>
 import { onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
-import { useIcunGroupStore } from '@/stores/IcunGroupStore'
+import { useIucnGroupStore } from '@/stores/IucnGroupStore'
 
 const props = defineProps({
     modelValue: [String, Number]
 })
 const emit = defineEmits(['update:modelValue'])
 
-const icunStore = useIcunGroupStore()
-const { groupList } = storeToRefs(icunStore)
+const iucnStore = useIucnGroupStore()
+const { groupList } = storeToRefs(iucnStore)
 
 function onChange(event) {
     emit('update:modelValue', event.target.value)
@@ -29,7 +29,7 @@ function onChange(event) {
 
 onMounted(() => {
     if (!groupList.value.length) {
-        icunStore.loadGroupList()
+        iucnStore.loadGroupList()
     }
 })
 </script>
@@ -54,7 +54,7 @@ label {
 }
 
 label::before {
-    content: "🌍";
+    content: "";
     font-size: 1rem;
 }
 
